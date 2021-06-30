@@ -32,26 +32,37 @@ namespace RequestProductPurchaseAsync
             this.InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
+            DoPurchase("MyConsumable"); // This consumable is free
+        }
+        private async void DoPurchase(string productId)
+        {
+            txtStatus.Text = "";
             var unfulfilled = await CurrentApp.GetUnfulfilledConsumablesAsync();
             if (unfulfilled.Count > 0)
             {
                 foreach (var transaction in unfulfilled)
                 {
-                    var fulfillStatus = await CurrentApp.ReportConsumableFulfillmentAsync("MyConsumable", transaction.TransactionId);
-                    if (fulfillStatus != FulfillmentResult.Succeeded)
+                    try
                     {
-                        Debug.WriteLine($"Fulfillment error: {fulfillStatus}");
+                        var fulfillStatus = await CurrentApp.ReportConsumableFulfillmentAsync(productId, transaction.TransactionId);
+                        if (fulfillStatus != FulfillmentResult.Succeeded)
+                        {
+                            txtStatus.Text = txtStatus.Text += "\r" + ($"Fulfillment error: {fulfillStatus}. Product Id: {productId}");
+                        }
+                    } catch (Exception ex )
+                    {
+                        txtStatus.Text = txtStatus.Text += "\r" + ($"Exception during fulfill: {ex.Message} Product Id: {productId}");
                     }
                 }
             }
 
 
             LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
-            if (!licenseInformation.ProductLicenses["MyConsumable"].IsActive)
+            if (!licenseInformation.ProductLicenses[productId].IsActive)
             {
-                var res = await CurrentApp.RequestProductPurchaseAsync("MyConsumable");
+                var res = await CurrentApp.RequestProductPurchaseAsync(productId);
                 if (res.Status == ProductPurchaseStatus.Succeeded)
                 {
                     var el = XElement.Parse(res.ReceiptXml);
@@ -61,22 +72,35 @@ namespace RequestProductPurchaseAsync
                         if (item.Name.LocalName == "ProductReceipt")
                         {
                             var at = item.Attribute("Id").Value;
-
-                            Debug.Assert(new Guid(at) == res.TransactionId);
+                            
+                            var guid = new Guid(at);
+                            //Debug.Assert( guid == res.TransactionId);
+                            if (guid != res.TransactionId)  // Failure case
+                                txtStatus.Text = txtStatus.Text += "\r" + ($"Receipt invalid. Transaction Id does not match ProductReceipt Id\r" +
+                                    $"{res.TransactionId}     {at}\r" +
+                                    $"Time now (UTC): {DateTime.UtcNow}    Time in receipt: {item.Attribute("PurchaseDate")}");
                         }
 
                     }
-                } else
+                    txtStatus.Text = txtStatus.Text += "\r" + $"Purchase of {productId} succeeded!";
+                }
+                else
                 {
-                    Debug.WriteLine($"Purchase faied: {res.Status}");
+                    txtStatus.Text = txtStatus.Text += "\r" + ($"Purchase of {productId} failed: {res.Status}");
                 }
 
-            } else
+            }
+            else
 
             {
-                Debug.WriteLine("Could not purchase since license is still active.");
+                txtStatus.Text = txtStatus.Text += "\r" + ($"Could not purchase since license is still active: {productId}");
             }
 
         }
-    }
+
+        private void Button_Click_Paid(object sender, RoutedEventArgs e)
+        {
+            DoPurchase("MyConsumablePaid");
+        }
+    }    
 }

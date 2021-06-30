@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<Receipt Version="2.0" CertificateId="A656B9B1B3AA509EEA30222E6D5E7DBDA9822DCD" xmlns="http://schemas.microsoft.com/windows/2012/store/receipt">
+  <ProductReceipt PurchasePrice="SEK20,0" PurchaseDate="2021-06-30T13:11:14.575Z" Id="182369b1-256b-4e9f-a5ad-8218a97b03d1" AppId="king.com.CandyCrushSaga_kgqvnymyfvs32" ProductId="com.midasplayer.iap.candycrushsaga.mercado.pricediff.goldpack1" ProductType="Consumable" PublisherUserId="4XZsj0kvHViOCCktDlScTPr+xJn8QufRF+RkEFLjBhU=" MicrosoftProductId="86990575-a494-46a0-a5dc-4602627288d7" MicrosoftAppId="86990575-a494-46a0-a5dc-4602627288d7" ExpirationDate="9999-12-31T23:59:59.999Z" OfferId="" />
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+        <DigestValue>VAYUhgIQfrVNY0O0D49WUv/JKxcZ3WuNbr68pQB24tw=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>UtEwjETVcy7CmE06YH9YnWB8SnXfhcKwAj6mPVoqr5VmN2wUlmG+UiaXH6Ds5tV1wIuZCzp1dW2ndd9VgmB/TMtJ0cAa+yVCv1eTqHf26MZnnZhs2i+lyH2uyYH3fg4Ms2SOylomvDqOEd2gYZ7D33a6vrFLP1P7iEBBaYqWYw9wY+G3nu4bHNCfZbZ8VJB376L7C6OQiO3vjqrs9X3QnV4tXE017qEVTI7WP2BgbF4mq9VJgr0ksjwb/DSwsFTI+S7HPPKKBUJP8NDJjaiaHLnNocjUFKqwTgcEdPBqZDJHWdyfIYkgln3jYMYV+j/cgFaI5GKsN8W15HMpHMFlkg==</SignatureValue>
+  </Signature>
+</Receipt>
+
