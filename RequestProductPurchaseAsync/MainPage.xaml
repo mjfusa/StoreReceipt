@@ -9,8 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel HorizontalAlignment="Center">
-        <Button Content="Buy (Free)" Click="Button_Click" Tag="Free"/>
+        <Button Content="Buy (Free)" Click="Button_Click" Tag="Free" AutomationProperties.AutomationId="BuyFree"/>
         <Button Content="Buy (Paid)" Click="Button_Click_Paid" Tag="Paid"/>
-        <TextBox Width="1000" Height="500" x:Name="txtStatus" AcceptsReturn="True"/>
+        <TextBox Width="1000" Height="500" x:Name="txtStatus" AcceptsReturn="True" AutomationProperties.AutomationId="txtResult"/>
     </StackPanel>
 </Page>

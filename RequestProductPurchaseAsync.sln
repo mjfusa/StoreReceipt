@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		sampleReceipt.xml = sampleReceipt.xml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -46,6 +48,30 @@ Global
 		{596E0442-5FA7-4B67-B4AC-98AE90F999EE}.Release|x86.ActiveCfg = Release|x86
 		{596E0442-5FA7-4B67-B4AC-98AE90F999EE}.Release|x86.Build.0 = Release|x86
 		{596E0442-5FA7-4B67-B4AC-98AE90F999EE}.Release|x86.Deploy.0 = Release|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM.Build.0 = Debug|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM64.Build.0 = Debug|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x64.ActiveCfg = Debug|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x64.Build.0 = Debug|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x64.Deploy.0 = Debug|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x86.ActiveCfg = Debug|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x86.Build.0 = Debug|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Debug|x86.Deploy.0 = Debug|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM.ActiveCfg = Release|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM.Build.0 = Release|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM.Deploy.0 = Release|ARM
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM64.ActiveCfg = Release|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM64.Build.0 = Release|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|ARM64.Deploy.0 = Release|ARM64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x64.ActiveCfg = Release|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x64.Build.0 = Release|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x64.Deploy.0 = Release|x64
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x86.ActiveCfg = Release|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x86.Build.0 = Release|x86
+		{5BD53F8C-A0A0-4789-8BC1-847B1834CD7D}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
