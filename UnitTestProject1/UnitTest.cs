@@ -11,7 +11,7 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        protected const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
+        protected const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723/wd/hub";
         private const string UwpAppId = @"57012MikeFrancis.TimeZonesConverter_08pddan6qgb4e!app";
 
         protected static WindowsDriver<WindowsElement> session;
@@ -31,6 +31,8 @@ namespace UnitTestProject1
                 var appiumOptions = new AppiumOptions();
                 appiumOptions.AddAdditionalCapability("app", UwpAppId);
                 appiumOptions.AddAdditionalCapability("deviceName", "WindowsPC");
+
+      
                 session = new WindowsDriver<WindowsElement>(new Uri(WindowsApplicationDriverUrl), appiumOptions);
 
             }
